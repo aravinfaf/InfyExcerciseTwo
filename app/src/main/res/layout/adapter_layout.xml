@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="country"
+            type="com.app.infyexcercisetwo.data.CountryModel" />
+    </data>
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/value_8dp"
+            tools:text="Infosys"
+            android:text="@{country.title}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="@dimen/value_8dp"
+            android:layout_marginTop="@dimen/value_4dp"
+            android:layout_toLeftOf="@+id/imageViewAvatar"
+            tools:text="Infosys"
+            android:text="@{country.description}"/>
+
+        <ImageView
+            android:id="@+id/imageViewAvatar"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textViewTitle"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/value_4dp"
+            android:scaleType="centerInside"
+            app:imageResource="@{country.image}"/>/>
+
+    </RelativeLayout>
+</layout>
