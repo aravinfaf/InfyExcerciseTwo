@@ -9,13 +9,13 @@ import com.app.infyexcercisetwo.data.CountryModel
 class MainViewmodel : ViewModel() {
 
     private val countrylist = ArrayList<CountryModel>()
-    private val livedata = MutableLiveData<List<CountryModel>>()
+    private val livedata = MutableLiveData<ArrayList<CountryModel>>()
 
     init {
           livedata.postValue(fetchData())
     }
 
-    private fun fetchData(): List<CountryModel>? {
+    private fun fetchData(): ArrayList<CountryModel>? {
 
         val data1 = CountryModel(
             "Beavers",
@@ -94,7 +94,7 @@ class MainViewmodel : ViewModel() {
 
     fun checkiSEmpty(data: CountryModel): Boolean = if (data.title != null) true else false
 
-    fun getCountryData() : LiveData<List<CountryModel>>{
+    fun getCountryData() : LiveData<ArrayList<CountryModel>>{
         return livedata
     }
 }
